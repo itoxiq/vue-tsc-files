@@ -1,0 +1,48 @@
+{
+  "name": "@itoxiq/vue-tsc-files",
+  "version": "1.1.0",
+  "description": "A tiny tool to run vue-tsc on specific files without ignoring tsconfig.json",
+  "author": "Moritz Reisinger <https://github.com/iToXiQ>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iToXiQ/vue-tsc-files.git"
+  },
+  "license": "MIT",
+  "files": [
+    "bin",
+    "src"
+  ],
+  "main": "./bin/cli.js",
+  "bin": {
+    "vue-tsc-files": "./bin/cli.js"
+  },
+  "keywords": [
+    "vue-tsc",
+    "tsc",
+    "tsc-files",
+    "vue-tsc-files",
+    "lint-staged"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "vue-tsc": "^1.8.22"
+  },
+  "devDependencies": {
+    "@json-types/tsconfig": "^0.2.0",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@types/node": "^20.10.0",
+    "pkg": "^5.8.1",
+    "rollup": "^4.6.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
