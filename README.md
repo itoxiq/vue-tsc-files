@@ -7,11 +7,11 @@ Ported from [tsc-files](https://github.com/gustavopch/tsc-files).
 ## Installation
 
 ```sh
-npm i -D itoxiq/vue-tsc-files
+npm i -D @itoxiq/vue-tsc-files
 ```
 
 ```sh
-yarn add -D itoxiq/vue-tsc-files
+yarn add -D @itoxiq/vue-tsc-files
 ```
 
 ## Why
@@ -25,12 +25,25 @@ With lint-staged:
 ```json
 {
   "lint-staged": {
-    "**/*.{vue,ts}": "vue-tsc-files"
+    "**/*.{vue,ts,tsx}": "vue-tsc-files"
   }
 }
 ```
 
-Flag "--noEmit" is always passed to `vue-tsc` by default.
+## Sidenotes
+
+Flag "--noEmit" is always passed to underlying `vue-tsc` by default.
+
+`vue-tsc-files` passes module declarations and namespaces from `d.ts` files to `vue-tsc`, so please make sure that needed declarations are inside `d.ts` files.
+
+```javascript
+// example.d.ts
+declare module "@vue/runtime-core" {
+  interface ComponentCustomProperties {
+    $custom: MyCustomType;
+  }
+}
+```
 
 ## License
 
